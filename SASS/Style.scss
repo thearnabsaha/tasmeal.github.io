@@ -1,0 +1,846 @@
+@import "./variables";
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto', sans-serif;
+}
+//? ############################# utility classes #################################
+.container{
+    width: 90vw;
+    margin: auto;
+}
+.magicShadow{
+    position: relative;
+    background: $heaven;
+}
+.magicShadow:after{
+    content:'';
+    display:block;
+    width:100%;
+    height:50px;
+    background-image:url(../icons/shadow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom:-12px;
+    z-index:-1;
+    
+}
+//? ############################# UPPER NAV DESIGN #################################
+
+nav{
+    .container{
+        display: flex;
+        justify-content: space-between;
+        .left,.right{
+            display: flex;
+            align-items: center;
+            .imgBox{
+                img{
+                    width: 100%;
+                }
+            }
+            .textBox{
+                padding-left: 20em;
+                h1{
+                    font-size: 1.5rem;
+                    color: $secondary;
+                }
+                p{
+                    font-size: 1.2rem;
+                    color: #5c5c5c;
+                }
+            }
+        }
+        .middle{
+            margin-top: 16em;
+            width: 20%;
+        }
+    }
+}
+//? ############################# LOWER NAV DESIGN #################################
+.lowerNav{
+    .navbar{
+        display: flex;
+        justify-content: center;
+        margin-top: 10em;
+        height: 22em;
+        li{
+            list-style: none;
+            a{
+                color: $secondary;
+                text-decoration: none;
+                font-size: 2.5rem;
+                padding: 1em;
+                background-color: $heaven;
+                transition: all ease-in-out .3s;
+                &:hover{
+                    color: $heaven;
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+}
+//? ############################# HOME DESIGN #################################
+#home{
+    background: url(../images/hero.png) bottom left;
+    .container{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 50em;
+        // height: 75vh;
+    }
+    .textBox{
+        padding-bottom: 30em;
+        h3{
+            font-size: 2rem;
+            span{
+                img{
+                    width: 15%;
+                }
+            }
+        }
+        h1{
+            font-size: 5rem;
+            padding-top: .2em;
+            span{
+                color: $primary;
+                font-size: 5rem;
+            }
+        }
+        p{
+            font-size: 2rem;
+            padding-top: 1em;
+            font-weight: 300;
+        }
+        a{
+            font-size: 2.5rem;
+            margin-top: .5em;
+            margin-right: .5em;
+            display: inline-block;
+            text-decoration: none;
+            color: $heaven;
+            background-color: $primary;
+            padding: .2em;
+            border-radius: .4rem;
+            border: 1px solid $primary;
+            transition: all .3s ease-in-out;
+            &:hover{
+            background-color: $heaven;
+            color: $primary;
+            }
+        }
+        .btn2{
+            color: $heaven;
+            background-color: $secondary;
+            border: 1px solid $secondary;
+            &:hover{
+            color: $secondary;
+            background-color: $heaven;
+            }
+        }
+    }
+}
+//? ############################# PRODUCTS DESIGN #################################
+#products{
+    h1{
+        text-align: center;
+        font-size: 3rem;
+        padding: 1rem;
+        &:after{
+            content: "";
+            display: block;
+            background: url(../icons/hr.svg) no-repeat center;
+            height: 3vh;
+        }
+        margin-bottom: 3rem;
+    }
+    padding-bottom: 5rem;
+    background-color: $ternary;
+    .allProducts{
+        position: relative;
+        .slider-btn{
+            background-color: $primary;
+            border: none;
+            outline: none;
+            padding: 1rem 2rem;
+            position: absolute;
+        }
+        .prev-btn{
+            left: -25px;
+            bottom: 200px;
+            z-index: 22;
+        }
+        .next-btn{
+            right: -25px;
+            bottom: 200px;
+            z-index: 22;
+        }
+        margin-bottom: 3rem;
+        background-color: $heaven;
+        width: 70vw;
+        margin: auto;
+        padding-top: 3rem;
+        .product{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h2{
+                font-size: 3rem;
+                padding-top: 3rem;
+            }
+            p{
+                font-size: 2rem;
+                color: $secondary;
+                padding-bottom: 1rem;
+            }
+            img{
+                width: 200px;
+                height: 200px;
+            }
+            .stars{
+                display: flex;
+                flex-direction: row;
+                img{
+                    width: 20px;
+                    height: 20px;
+                    margin-bottom: .5rem;
+                }
+            }
+            .cart{
+                display: flex;
+                margin-bottom: 3rem;
+                border: 1px solid $primary;
+                .cartBtn{
+                    font-size: 2rem;
+                    background-color: $heaven;
+                    color: $primary;
+                    text-decoration: none;
+                    padding: 0em  1rem;
+                    transition: all ease-in-out .3s;
+                    display: inline-block;
+                    border: none;
+                    outline: none;
+                    &:hover{
+                        background-color: $primary;
+                        color: $heaven;
+                    }
+                }
+                .imgBox{
+                    padding: 1rem 1rem;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+}
+//? ############################# ABOUT DESIGN #################################
+#about{
+    h1{
+        text-align: center;
+        margin-top: 1em;
+        font-size: 3rem;
+        font-weight: 700;
+        &:after{
+            content: "";
+            display: block;
+            background: url(../icons/hr.svg) no-repeat center;
+            height: 3vh;
+        }
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+        margin-top: 20em;
+        .textBox{
+            padding: 20em;
+            h2{
+                font-size: 3rem;
+                font-weight: 700;
+            }
+            p{
+                margin-top: 2em;
+                font-size: 1.5rem;
+                line-height: 2em;
+                font-weight: 300;
+            }
+            .btn2{
+                font-size: 2.5rem;
+                margin-top: 1em;
+                display: inline-block;
+                text-decoration: none;
+                padding: .2em;
+                border-radius: .4rem;
+                transition: all .3s ease-in-out;
+                color: $heaven;
+                background-color: $secondary;
+                border: 1px solid $secondary;
+                &:hover{
+                color: $secondary;
+                background-color: $heaven;
+                }
+            }
+        }
+    }
+}
+//? ############################# SERVICES DESIGN #################################
+#services{
+    background-color: $ternary;
+    // height: 60vh;
+    h2{
+        font-size: 2.5rem;
+        padding-top: 2em;
+        text-align: center;
+        &:after{
+            content: "";
+            display: block;
+            background: url(../icons/hr.svg) no-repeat center;
+            height: 3vh;
+        }
+    }
+    .box{
+        margin-top: 50em;
+        display: flex;
+        justify-content: space-around;
+        .card{
+            box-shadow: 0px 0px 20px 0px rgba(170, 170, 170, 0.329);
+            img{
+                transform: translateY(-50%);
+            }
+            background-color: $heaven;
+            margin-left: 25em;
+            margin-right: 25em;
+            text-align: center;
+            h1{
+                font-size: 2rem;
+                transform: translateY(-100%);
+            }
+            .diff{
+                color: $primary;
+            }
+            p{
+                padding: 0em 1em;
+                font-size: 1.5rem;
+                font-weight: 300;
+                line-height: 1.5em;
+            }
+            .btn2{
+                font-size: 2.5rem;
+                margin-top: 1em;
+                display: inline-block;
+                text-decoration: none;
+                padding: .2em;
+                border-radius: .4rem;
+                transition: all .3s ease-in-out;
+                color: $heaven;
+                background-color: $secondary;
+                border: 1px solid $secondary;
+                margin-bottom: 2.5rem;
+                &:hover{
+                color: $secondary;
+                background-color: $heaven;
+                }
+            }
+            .btn1{
+                font-size: 2.5rem;
+                margin-top: 1em;
+                display: inline-block;
+                text-decoration: none;
+                padding: .2em;
+                border-radius: .4rem;
+                transition: all .3s ease-in-out;
+                color: $heaven;
+                background-color: $primary;
+                border: 1px solid $primary;
+                margin-bottom: 2.5rem;
+                &:hover{
+                color: $primary;
+                background-color: $heaven;
+                }
+            }
+        }
+    }
+}
+//? ############################# SHOP DESIGN #################################
+#shop{
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.733) rgba(0, 0, 0, 0.733)) ,url(../images/food-table.jpg) no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+    h1{
+        text-align: center;
+        color: $heaven;
+        padding-top: 1em;
+        font-size: 3rem;
+        &:after{
+            content: "";
+            display: block;
+            background: url(../icons/hr.svg) no-repeat center;
+            height: 3vh;
+        }
+    }
+    .timer{
+        display: flex;
+        justify-content: center;
+        padding-top: 20em;
+        .first{
+            display: flex;
+        }
+        .second{
+            display: flex;
+        }
+        .day{
+            margin-left: 20em;
+            background-color: $primary;
+            padding: 2rem 5rem;
+            border-radius: 1rem;
+            h2{
+                font-size: 5rem;
+                font-weight: 300;
+                color: $heaven;
+            }
+            p{
+                font-size: 1.5rem;
+                text-align: center;
+                font-weight: 300;
+                color: $heaven;
+            }
+        }
+    }
+}
+//? ############################# BLOG DESIGN #################################
+#blog{
+    background-color: $ternary;
+    padding-bottom: 30em;
+    h3{
+        font-size: 3rem;
+        text-align: center;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        &:after{
+            content: "";
+            display: block;
+            background: url(../icons/hr.svg) no-repeat center;
+            height: 3vh;
+        }
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+        .card{
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.247);
+            background-color: $heaven;
+            display: flex;
+            flex-direction: column;
+            margin: 0em 50em;
+            .imgBox{
+                img{
+                    width: 100%;
+                }
+            }
+            .textBox{
+                padding-bottom: 50em;
+                h2{
+                    display: inline-block;
+                    padding-left: 2em;
+                    padding-top: 2em;
+                    font-size: 2rem;
+                    font-weight: 300;
+                    color: #666;
+                    span{
+                        color: $secondary;
+                        font-weight: 400;
+                        font-size: 2rem;
+                    }
+                }
+                h1{
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    padding: 1em 0em;
+                    padding-left: 1.5em;
+                }
+                p{
+                    font-size: 1.5rem;
+                    line-height: 1.5em;
+                    padding: 0em 2em;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+//? ############################# NEWS LETTER DESIGN #################################
+#news{
+    background-color: $primary;
+    padding: 10em 0em;
+    .container{
+        display: flex;
+        align-items: center;
+        .imgBox{
+            img{
+                width: 90%;
+            }
+        }
+        .textBox{
+            h1{
+                font-size: 3rem;
+                padding-bottom: 2rem;
+            }
+            p{
+                font-size: 1.5rem;
+                font-weight: 400;
+                width: 80%;
+                line-height: 1.5em;
+            }
+            .form{
+                background-color: $heaven;
+                font-size: 3rem;
+                border-radius: .5rem;
+                display: inline-block;
+                padding: .1em .1em;
+                padding-left: .8em;
+                margin-top: 3rem;
+                input{
+                    outline: none;
+                    border: none;
+                }
+                button{
+                    outline: none;
+                    border: none;
+                    background-color: $primary;
+                    padding: .5em 1.5em;
+                    margin-left: 8em;
+                    color: $heaven;
+                    border-radius: .5rem;
+                    transition: all ease-in-out .3s;
+                    &:hover{
+                        background-color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+//? ############################# CONTACT US DESIGN #################################
+#contact{
+    .con{
+        display: flex;
+        .mapp{
+            width: 50vw;
+        }
+        .textBox{
+            width: 50vw;
+            h2{
+                font-size: 3rem;
+                text-align: center;
+                padding-top: 2em;
+                padding-bottom: 1em;
+                &:after{
+                    content: "";
+                    display: block;
+                    background: url(../icons/hr.svg) no-repeat center;
+                    height: 3vh;
+                }
+            }
+            .card{
+                margin-top: 20em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 10em;
+                .text{
+                    padding-left: 20em;
+                    h1{
+                        font-size: 2rem;
+                    }
+                    p{
+                        font-size: 1.5rem;
+                        font-weight: 300;
+                        line-height: 2em;
+                    }
+                }
+            }
+        }
+    }
+}
+//? ############################# FOOTER DESIGN #################################
+#footer{
+    background-color: $secondary;
+    .container{
+        display: flex;
+        padding: 20em;
+        color: $heaven;
+        .about{
+            width: 30vw;
+            h1{
+                font-size: 2rem;
+                font-weight: 400;
+                border-bottom: $primary 1px solid;
+                text-align: center;
+                padding: .5em 0em;
+            }
+            p{
+                font-weight: 400;
+                font-size: 1.5rem;
+                line-height: 1.5em;
+                padding: 1em 4em;
+                text-align: center;
+            }
+        }
+        .links{
+            h1{
+                font-weight: 400;
+                font-size: 2rem;
+                border-bottom: $primary 1px solid;
+                text-align: center;
+                padding: .5em 0em;
+            }
+            li{
+                text-align: center;
+                list-style: none;
+                padding: 10em 0em;
+                a{
+                    text-decoration: none;
+                    color: $heaven;
+                    font-size: 1.8rem;
+                }
+            }
+            width: 30vw;
+        }
+        .follow{
+            h1{
+                text-align: center;
+                font-weight: 400;
+                font-size: 2rem;
+                border-bottom: $primary 1px solid;
+                padding: .5em 0em;
+            }
+            width: 30vw;
+            font-weight: 400;
+            .social{
+                justify-content: center;
+                display: flex;
+                font-size: 3rem;
+                padding-top: .5em;
+                a{
+                    font-weight: 300;
+                    padding-left: .5em;
+                    text-decoration: none;
+                    color: $heaven;
+                }
+            }
+        }
+    }
+}
+footer{
+    h1{
+        color: $heaven;
+        background-color: $footer;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 300;
+        span{
+            font-size: 1.5rem;
+            color: $primary;
+        }
+    }
+}
+//? ################################################humberger menu desing#######################################
+.humWrapper{
+    position: relative;
+    // position: fixed;
+}
+.humburger{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    background-color: $primary;
+    padding: 5em;
+    border-radius: 1rem;
+    opacity: 80%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 22;
+    display: none;
+    // border: 1px solid red;
+    img{
+        width: 4.5rem;
+    }
+}
+.mobileNav{
+    position: fixed;
+    width: 70%;
+    height: 100%;
+    z-index:100;
+    opacity: 90%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 20em;
+    padding-top: 30em;
+    transform: translateX(-100%);
+    transition: all .5s ease-in-out ;
+    li{
+        list-style: none;
+        padding-bottom: 30em;
+        a{
+            text-decoration: none;
+            color: #555;
+            font-size: 4rem;
+            &:hover{
+                color: $primary;
+                transition: all .1s ease-in-out;
+            }
+        }
+    }
+}
+.open{
+    transform: translateX(0);
+}
+
+//? ############################# RESPONSIVENESS DESIGN #################################
+@media(max-width:1100px){
+    html{
+        font-size: 50%;
+    }
+}
+@media(max-width:930px){
+    #about{
+        .box{
+            flex-direction: column;
+        }
+    }
+    #services{
+        .box{
+            flex-direction: column;
+            .card{
+                margin-bottom: 10rem;
+            }
+        }
+    }
+    #blog{
+        .box{
+            flex-direction: column;
+            .card{
+                margin-bottom: 10rem;
+            }
+        }
+    }
+    #news{
+        .container{
+            flex-direction: column;
+        }
+    }
+    #contact{
+        .con{
+            flex-direction: column;
+            .mapp{
+                width: 100vw;
+            }
+            .textBox{
+                width: 100vw;
+            }
+        }
+    }
+}
+@media(max-width:760px){
+    html{
+        font-size: 40%;
+    }
+    #home{
+        .imgBox{
+            display: none;
+        }
+    }
+    #about{
+        .box{
+            .imgBox{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media(max-width:620px){
+    .humburger{
+        display: block;
+    }
+    nav{
+        display: none;
+    }
+    .lowerNav{
+        display: none;
+    }
+    #shop{
+        font-size: 30%;
+    }
+}
+@media(max-width:450px){
+    #home{
+        .textBox{
+            h3{
+                span{
+                    img{
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+    #shop{
+        .timer{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .day{
+                margin: 20em;
+            }
+        }
+    }
+}
+@media(max-width:370px){
+    #footer{
+        .container{
+            .about{
+                p{
+                    padding: 0em;
+                    font-size: 1.3rem;
+                }
+            }
+            .links{
+                li{
+                    a{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            .follow{
+                .social{
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    #news{
+        .container{
+            .textBox{
+                .form{
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
